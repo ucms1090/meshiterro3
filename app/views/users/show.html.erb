@@ -5,6 +5,10 @@
 
 <% @posts.each do |postdata| %>
 <div>
+  <!--それぞれの投稿へのリンク-->
+  <%= link_to post_path(postdata.id) do %>
+    <p>投稿した画像：<%= image_tag postdata.get_image %></p>
+  <% end %>
   <p>ユーザー画像：<%=  image_tag postdata.user.get_user_image(100,100) %></p>
   <p>ショップ名：<%= postdata.shop_name %></p>
   <p>説明：<%= postdata.caption %></p>
