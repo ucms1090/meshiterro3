@@ -1,8 +1,6 @@
-<% @posts.each do |postdata| %>
+<% posts.each do |postdata| %>
 <div>
-  <%= link_to post_path(postdata.id) do %>
-    <p>発行番号：<%= postdata.id %></p>
-  <% end %>
+  <p>発行番号：<%= postdata.id %></p>
   <p>投稿画像：<%= image_tag postdata.get_image %></p>
   <p>ショップ名：<%= postdata.shop_name %></p>
   <p>説明：<%= postdata.caption %></p>
