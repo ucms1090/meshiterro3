@@ -1,2 +1,10 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |postdata| %>
+<div>
+  <p>発行番号：<%= postdata.id %></p>
+  <p>投稿画像：<%= image_tag postdata.get_image %></p>
+  <p>ショップ名：<%= postdata.shop_name %></p>
+  <p>説明：<%= postdata.caption %></p>
+  <p>ユーザー番号：<%= postdata.user_id %></p>
+  <p>ユーザー画像：<%= image_tag 'sample-author1.jpg',size: "100x100" %></p>
+</div>
+<% end %>
