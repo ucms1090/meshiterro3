@@ -1,9 +1,13 @@
 <div>
   <p>発行番号：<%= @post.id %></p>
-  <p>投稿画像：<%= image_tag @post.get_image %></p>
+  <p>投稿画像：<%= image_tag @post.get_image.variant(resize: "100x100") %></p>
   <p>ショップ名：<%= @post.shop_name %></p>
   <p>説明：<%= @post.caption %></p>
   <p>ユーザー番号：<%= @post.user_id %></p>
   <p>ユーザー画像：<%= image_tag 'sample-author1.jpg',size: "100x100" %></p>
   <p>投稿日時：<%= l @post.created_at %></p>
 </div>
+<% if @post.user == current_user %>
+  <%= link_to '削除', post_path, method: :delete %>
+<% end %>
+<%= current_user.id %>
