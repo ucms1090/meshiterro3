@@ -11,3 +11,12 @@
   <%= link_to '削除', post_path, method: :delete %>
 <% end %>
 <%= current_user.id %>
+
+<div>
+  <p>コメント件数：<%= @post.comments.count %></p>
+  <p></p>
+</div>
+
+<div>
+
+</div>
