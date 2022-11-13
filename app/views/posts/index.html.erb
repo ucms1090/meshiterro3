@@ -7,6 +7,6 @@
   <p>ショップ名：<%= postdata.shop_name %></p>
   <p>説明：<%= postdata.caption %></p>
   <p>ユーザー番号：<%= postdata.user_id %></p>
-  <p>ユーザー画像：<%= image_tag 'sample-author1.jpg',size: "100x100" %></p>
+  <p>ユーザー画像：<%= image_tag postdata.user.get_user_image(100,100) %></p>
 </div>
 <% end %>

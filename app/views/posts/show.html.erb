@@ -4,7 +4,7 @@
   <p>ショップ名：<%= @post.shop_name %></p>
   <p>説明：<%= @post.caption %></p>
   <p>ユーザー番号：<%= @post.user_id %></p>
-  <p>ユーザー画像：<%= image_tag 'sample-author1.jpg',size: "100x100" %></p>
+  <p>ユーザー画像：<%= image_tag @post.user.get_user_image(100,100) %></p>
   <p>投稿日時：<%= l @post.created_at %></p>
 </div>
 <% if @post.user == current_user %>
