@@ -21,8 +21,8 @@
     <p>コメント投稿日時：<%= l comment.created_at %></p>
     <p>コメント文：<%= comment.comment %></p>
     <% if comment.user_id == current_user.id %>
-      <p><%= link_to 'コメント削除', post_comment_path(comment.post.id), method: :delete %></p>
-      <!--多分ルートが一つしかないからmethod: :delete削除してもいける気がする-->
+      <p><%= link_to 'コメント削除', post_comment_path(comment.post.id, comment.id), method: :delete %></p>
+      <!--idの引数は二つ渡す必要がある-->
     <% end %>
   <% end %>
 </div>
