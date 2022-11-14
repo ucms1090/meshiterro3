@@ -8,5 +8,8 @@
   <p>説明：<%= postdata.caption %></p>
   <p>ユーザー番号：<%= postdata.user_id %></p>
   <p>ユーザー画像：<%= image_tag postdata.user.get_user_image(100,100) %></p>
+  <p>ユーザー名：<%= postdata.user.name %></p>
+  <p><%= link_to "#{postdata.comments.count} コメント", post_path(postdata.id) %></p>
+  <p>_______________________________</p>
 </div>
 <% end %>

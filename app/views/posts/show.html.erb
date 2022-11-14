@@ -14,9 +14,18 @@
 
 <div>
   <p>コメント件数：<%= @post.comments.count %></p>
-  <p></p>
+  <% @post.comments.each do |comment| %>
+    <p>++++++++++++++++++++++++++++++++++++++++++++++</p>
+    <p><%= image_tag comment.user.get_user_image(100,100) %></p>
+    <p>コメントユーザー：<%= comment.user.name %></p>
+    <p>コメント投稿日時：<%= l comment.created_at %></p>
+    <p>コメント文：<%= comment.comment %></p>
+  <% end %>
 </div>
 
 <div>
-
+  <%= form_with model: [@post, @comment] do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここにどうぞ" %>
+    <%= f.submit 'コメント投稿'%>
+  <% end %>
 </div>
