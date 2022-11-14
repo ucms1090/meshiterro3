@@ -10,6 +10,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id]).destroy
+    # コメントのIDを取得しないといけないのに、投稿postのIDを朱徳してしまっている
+    redirect_to post_path(@post.id)
   end
 
   private
